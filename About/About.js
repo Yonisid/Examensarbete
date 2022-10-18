@@ -1,53 +1,85 @@
-let x = document.getElementById("form_sample");
-let createform = document.createElement('form');
-createform.setAttribute("action", "");
-createform.setAttribute("method", "post"); 
-x.appendChild(createform);
+function createElement(tag, html, attributes = {}) {
+    const el = document.createElement(tag)
 
-let heading = document.createElement('h2'); 
-heading.innerHTML = "Contact Form ";
-createform.appendChild(heading);
+    if (html) {
+        el.innerHTML = html;
+    }
 
-let line = document.createElement('hr');
-createform.appendChild(line);
+    Object.keys(attributes).forEach(key => {
+        el[key] = attributes[key];
+    })
 
-let linebreak = document.createElement('br');
-createform.appendChild(linebreak);
+    return el
+}
 
-let namelabel = document.createElement('label');
-namelabel.innerHTML = "Your Name : ";
-createform.appendChild(namelabel);
+window.addEventListener('DOMContentLoaded', () => {
+    let x = document.getElementById("form_sample");
+    let createform = document.createElement('form');
+    createform.setAttribute("action", "");
+    createform.setAttribute("method", "post"); 
+    x.appendChild(createform);
 
-let inputelement = document.createElement('input');
-inputelement.setAttribute("type", "text");
-inputelement.setAttribute("name", "dname");
-createform.appendChild(inputelement);
+    let heading = document.createElement('h2'); 
+    heading.innerHTML = "Contact Form ";
+    createform.appendChild(heading);
 
-let emaillabel = document.createElement('label');
-emaillabel.innerHTML = "Your Email : ";
-createform.appendChild(emaillabel);
+    let line = document.createElement('hr');
+    createform.appendChild(line);
 
-let emailelement = document.createElement('input');
-emailelement.setAttribute("type", "text");
-emailelement.setAttribute("name", "demail");
-createform.appendChild(emailelement);
+    let linebreak = document.createElement('br');
+    createform.appendChild(linebreak);
 
-let emailbreak = document.createElement('br');
-createform.appendChild(emailbreak);
+    let namelabel = document.createElement('label');
+    namelabel.innerHTML = "Your Name : ";
+    createform.appendChild(namelabel);
 
-let messagelabel = document.createElement('label');
-messagelabel.innerHTML = "Your Message : ";
-createform.appendChild(messagelabel);
+    let inputelement = createElement('input', null, {
+        type: "text",
+        name: "dname,"
+    });
+    //inputelement.setAttribute("type", "text");
+    //inputelement.setAttribute("name", "dname");
+    createform.appendChild(inputelement);
 
-let texareaelement = document.createElement('textarea');
-texareaelement.setAttribute("name", "dmessage");
-createform.appendChild(texareaelement);
+    let emaillabel = createElement('label', "Your Email : ");
+    //emaillabel.innerHTML = "Your Email : ";
+    createform.appendChild(emaillabel);
 
-let messagebreak = document.createElement('br');
-createform.appendChild(messagebreak);
+    let emailelement = createElement('input', null, {
+        type: "text",
+        name: "dname",
+    });
+    // emailelement.setAttribute("type", "text");
+    // emailelement.setAttribute("name", "demail");
+    createform.appendChild(emailelement);
 
-let submitelement = document.createElement('input');
-submitelement.setAttribute("type", "submit");
-submitelement.setAttribute("name", "dsubmit");
-submitelement.setAttribute("value", "Submit");
-createform.appendChild(submitelement);
+    let emailbreak = createElement('br');
+    createform.appendChild(emailbreak);
+
+    let messagelabel = createElement('label', "Your Message : ");
+    // let messagelabel = document.createElement('label');
+    // messagelabel.innerHTML = "Your Message : ";
+    createform.appendChild(messagelabel);
+
+    let texareaelement = createElement('textarea', null, {name: 'dmessage'});
+    // let texareaelement = document.createElement('textarea');
+    // texareaelement.setAttribute("name", "dmessage");
+    createform.appendChild(texareaelement);
+
+    let messagebreak = createElement('br');
+    createform.appendChild(messagebreak);
+
+    // let submitelement = document.createElement('input');
+    // submitelement.setAttribute("type", "submit");
+    // submitelement.setAttribute("name", "dsubmit");
+    // submitelement.setAttribute("value", "Submit");
+
+    let submitelement = createElement('input', null, {
+        type: "submit",
+        name: "dsubmit",
+        value: "Submit",
+    });
+
+    createform.appendChild(submitelement);
+
+})
