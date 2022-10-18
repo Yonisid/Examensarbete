@@ -14,13 +14,16 @@ function createElement(tag, html, attributes = {}) {
 
 window.addEventListener('DOMContentLoaded', () => {
     let x = document.getElementById("form_sample");
-    let createform = document.createElement('form');
+    let createform = createElement('form', null, {
+        action: "",  
+        method: "post"
+    });
     createform.setAttribute("action", "");
     createform.setAttribute("method", "post"); 
     x.appendChild(createform);
 
-    let heading = document.createElement('h2'); 
-    heading.innerHTML = "Contact Form ";
+    let heading = createElement('h2', "Contact Form"); 
+    //heading.innerHTML = "Contact Form ";
     createform.appendChild(heading);
 
     let line = document.createElement('hr');
@@ -29,13 +32,13 @@ window.addEventListener('DOMContentLoaded', () => {
     let linebreak = document.createElement('br');
     createform.appendChild(linebreak);
 
-    let namelabel = document.createElement('label');
-    namelabel.innerHTML = "Your Name : ";
+    let namelabel = createElement('label', "Your Name : ");
+    //namelabel.innerHTML = "Your Name : ";
     createform.appendChild(namelabel);
 
     let inputelement = createElement('input', null, {
         type: "text",
-        name: "dname,"
+        name: "dname"
     });
     //inputelement.setAttribute("type", "text");
     //inputelement.setAttribute("name", "dname");
