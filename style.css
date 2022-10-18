@@ -132,12 +132,10 @@ transition: transform 0.4s ease-in-out;
 display: none;
 }
 
-.form-container {
-  border: 1px solid black;
-}
+
 
 .main {
-  border: 1px solid black;
+
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -148,13 +146,33 @@ display: none;
   justify-content: center;
   color: white;
 }
+.hide{
+  display: none;
+}
 
-.quiz-area {
-  border: 1px solid black;
+.myForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+  flex-direction: column;
+  max-width: 30%;
+}
+.name{
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.start{
+  background-color: white;
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin-bottom: 30px;
+  border: none;
 }
 
 .question {
-  border: 1px solid black;
+ 
   border-radius: 5px;
   background-color: rgb(217, 218, 218);
   min-width: 600px;
