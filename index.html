@@ -8,16 +8,37 @@
     <title>Bright Quiz</title>
 </head>
 <body>
-    <div class="continer">
-        <div class="header">
+    <div class="container">
+        <nav>
+          <div class="navbar">
+            <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name=""/>
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>  
+              <div class="menu-items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About & Contact</a></li>
+                <li><a href="#">Leaderboard</a></li>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    
+    <!-- <div class="continer">
+        <div class="header">s
             <div class="nav">
                 <ul class="ul-lista">
-                    <li class="list-element">Home</li>
-                    <li class="list-element">About</li>
-                    <li class="list-element">Contact</li>
+                    <li class="list-element"><a href="#">Home</a></li>
+                    <li class="list-element"><a href="#">About</a></li>
+                    <li class="list-element"><a href="#">Contact</a></li>
+                    <li class="list-element"><a href="#">Leaderboard</a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <div class="form-container">
             <h2>Skriv in ditt namn</h2>
             <form>
@@ -26,19 +47,23 @@
             </form>
         </div>
         <div class="main">
-            <h1>Bright Quiz</h1>
+            <h1 class="h1-main">Bright Quiz</h1>
             <span class="timer"></span>
             <div class="quiz-area">
-                <div class="question">Vem är världens bästa fotbollspelare</div>
+                <div class="question"><h2 class="h2-question">Vem är världens bästa fotbollspelare</h2></div>
                 <div class="answers">
-                    <div class="answer">Messi</div>
-                    <div class="answer">Ronaldo</div>
-                    <div class="answer">Benzema</div>
-                    <div class="answer">Yonis</div>
+                    <div class="first-answers">
+                        <div class="answer1">Messi</div>
+                        <div class="answer2">Ronaldo</div>
+                    </div>
+                    <div class="second-answers">
+                        <div class="answer3">Benzema</div>
+                        <div class="answer4">Yonis</div>
+                    </div>
                 </div>
-                <div class="submit">
-                    <button class="submit-score"></button>
-                </div>
+                <!-- <div class="submit">
+                    <button class="submit-score" type="submit">Submit</button>
+                </div> -->
             </div>
         </div>
         <div class="footer">
