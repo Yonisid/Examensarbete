@@ -18,8 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
         action: "",  
         method: "post"
     });
-    createform.setAttribute("action", "");
-    createform.setAttribute("method", "post"); 
+    //createform.setAttribute("action", "");
+    //createform.setAttribute("method", "post"); 
     x.appendChild(createform);
 
     let heading = createElement('h2', "Contact Form"); 
