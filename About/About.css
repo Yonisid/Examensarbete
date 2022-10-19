@@ -29,7 +29,7 @@ body{
 
 .innerText{
     font-size: 20px;
-    margin-top: 50px;
+    margin-top: 28px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -62,12 +62,12 @@ hr{
 
 label{
     float:left;
-    font-size:16px
+    font-size:16px;
 }
 
 input[type="text"]{
     width:100%;
-    margin-top:10px;
+    margin-top:5px;
     height:35px;
     margin-bottom:10px;
     padding:10px;
@@ -81,18 +81,19 @@ textarea{
     border-radius: 10px;
     padding:10px;
     height:50px;
-    margin-bottom: 1px;
+    margin-top: 5px;
+    margin-bottom: 4px;
     resize:none
 }
 
 input[type="submit"]{
     width:100%;
-    margin-top: 10px;
-    padding: 5px 45px;
+    margin-top: 20px;
+    padding: 10px 45px;
     background-color:#AACD65;
     border:none;
     border-radius: 10px;
-    color:#fff;
+    color:rgb(0, 0, 0);
     font-size:18px;
     font-weight:700;
     cursor:pointer;

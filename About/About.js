@@ -64,7 +64,9 @@ window.addEventListener('DOMContentLoaded', () => {
     // messagelabel.innerHTML = "Your Message : ";
     createform.appendChild(messagelabel);
 
-    let texareaelement = createElement('textarea', null, {name: 'dmessage'});
+    let texareaelement = createElement('textarea', null, {
+        name: 'dmessage'
+    });
     // let texareaelement = document.createElement('textarea');
     // texareaelement.setAttribute("name", "dmessage");
     createform.appendChild(texareaelement);
