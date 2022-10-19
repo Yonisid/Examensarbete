@@ -1,31 +1,34 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: rgb(20, 115, 167);
-  }
+body {
+  background-color: rgb(20, 115, 167);
+}
 
 .header {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .form-container {
-    border: 1px solid black;  
+  border: 1px solid black;
 }
 
 .main {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .questions {
-    border: 1px solid black;
+  border: 1px solid black;
+  
 }
 
 .answer {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
