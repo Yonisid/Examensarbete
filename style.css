@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(20, 115, 167);
+  background-color: #F6F7EB;
 }
 
 .navbar {
@@ -144,7 +144,7 @@ display: none;
 
 .h1-main {
   justify-content: center;
-  color: white;
+  color: black;
 }
 .hide{
   display: none;
