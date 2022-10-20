@@ -21,11 +21,9 @@ function init() {
   let counter = 0;
   let question1 = [];
 
-  answer1.addEventListener("click", () => {
-    counter++;
-    console.log(counter);
-  });
 
+
+  let testArray = [];
   function resultPerPage() {
     console.log("results");
     return fetch("https://opentdb.com/api.php?amount=10&type=multiple")
@@ -38,28 +36,40 @@ function init() {
         );
 
         for (let i = 0; i < incorrectList.length; i++) {
+          testArray.push(incorrectList[i]);
+        }
+        testArray.push(resultsPage[counter].correct_answer);
+        shuffleArray(testArray)
+
+        
+        for (let j = 0; j < testArray.length; j++) {
           let incorrect_answer = document.createElement("div");
           incorrect_answer.classList.add("answer1");
-          incorrect_answer.innerHTML = incorrectList[i];
+          incorrect_answer.innerHTML = testArray[j];
           answerDiv.appendChild(incorrect_answer);
         }
-
-        // let incorrect_answer1 = resultsPage[counter].incorrect_answers.length;
-        // let incorrect_answer2 = resultsPage[counter].incorrect_answers[1];
-        // let incorrect_answer3 = resultsPage[counter].incorrect_answers[2];
-
-        answer1.innerHTML = resultsPage[counter].correct_answer;
+        // let correcAnswer = document.createElement("div");
+        // correcAnswer.classList.add("answer1");
+        // answer1.innerHTML = resultsPage[counter].correct_answer;
 
         let question1 = resultsPage[counter].question;
 
         questionDiv.innerHTML = question1;
+        console.log(testArray);
         
-        answer1.innerHTML = incorrect_answer1;
-        answer2.innerHTML = incorrect_answer2;
-        answer3.innerHTML = incorrect_answer3;
-        answer4.innerHTML = answer;
-
+        answer1.addEventListener("click", () => {
+          counter++;
+          console.log(counter);
+      
+          const boxes = document.querySelectorAll(".answer1");
+      
+          boxes.forEach((box) => {
+            box.remove();
+          });
+          resultPerPage();
+        });
       });
+      
   }
 
   function handleClick(event) {
