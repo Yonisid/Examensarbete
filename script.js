@@ -22,11 +22,6 @@ function init() {
   let counter = 0;
   let question1 = [];
 
-  answer1.addEventListener("click", () => {
-    counter++;
-    console.log(counter);
-  });
-
   function chosenCategories() {
     let chosenCategory = "";
     if(categories === 'Sports'){
@@ -34,8 +29,9 @@ function init() {
       
     }
     return chosenCategory
-
   }
+
+  let testArray = [];
   async function resultPerPage() {
     let test = await chosenCategories()
 
@@ -49,29 +45,42 @@ function init() {
         const incorrectList = shuffleArray(
           resultsPage[counter].incorrect_answers
         );
-
         for (let i = 0; i < incorrectList.length; i++) {
+          testArray.push(incorrectList[i]);
+        }
+        testArray.push(resultsPage[counter].correct_answer);
+        shuffleArray(testArray)
+
+        
+        for (let j = 0; j < testArray.length; j++) {
           let incorrect_answer = document.createElement("div");
           incorrect_answer.classList.add("answer1");
-          incorrect_answer.innerHTML = incorrectList[i];
+          incorrect_answer.innerHTML = testArray[j];
           answerDiv.appendChild(incorrect_answer);
         }
-
-
-        answer1.innerHTML = resultsPage[counter].correct_answer;
+        // let correcAnswer = document.createElement("div");
+        // correcAnswer.classList.add("answer1");
+        // answer1.innerHTML = resultsPage[counter].correct_answer;
 
         let question1 = resultsPage[counter].question;
 
         questionDiv.innerHTML = question1;
+        console.log(testArray);
         
-        answer1.innerHTML = incorrect_answer1;
-        answer2.innerHTML = incorrect_answer2;
-        answer3.innerHTML = incorrect_answer3;
-        answer4.innerHTML = answer;
-
+        answer1.addEventListener("click", () => {
+          counter++;
+          console.log(counter);
+      
+          const boxes = document.querySelectorAll(".answer1");
+      
+          boxes.forEach((box) => {
+            box.remove();
+          });
+          resultPerPage();
+        });
       });
+      
   }
-
 
   function handleClick(event) {
     event.preventDefault();
