@@ -17,16 +17,27 @@ function init() {
   const answer1 = document.querySelector(".answer1");
   const answerDiv = document.querySelector(".answers");
   const input = document.querySelector(".name");
-  const categories = document.querySelector("#kategori").value;
-
+  
   let counter = 0;
   let question1 = [];
-
+  
   function chosenCategories() {
+    const categories = document.querySelector("#category").value;
     let chosenCategory = "";
     if(categories === 'Sports'){
       chosenCategory = 21;
-      
+    }
+    if(categories === 'Geography'){
+      chosenCategory = 22;
+    }
+    if(categories === 'General Knowledge'){
+      chosenCategory = 9;   
+    }
+    if(categories === 'History'){
+      chosenCategory = 23;   
+    }
+    if(categories === 'Art'){
+      chosenCategory = 25;  
     }
     return chosenCategory
   }
