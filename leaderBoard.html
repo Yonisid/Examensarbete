@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+     <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> -->
+
+    <title>Leaderboard</title>
+</head>
+<body>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
+        import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyAQFZ3xyxXrNyr2HqZnIMcBzJUcPpyiFrM",
+          authDomain: "newquizgame-f84a6.firebaseapp.com",
+          projectId: "newquizgame-f84a6",
+          storageBucket: "newquizgame-f84a6.appspot.com",
+          messagingSenderId: "155451706638",
+          appId: "1:155451706638:web:6f09004a53dfc6f8511b5f",
+          measurementId: "G-M1NZT1M4TF"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const analytics = getAnalytics(app);
+
+        getDocs(collection(db, 'leaderboard')).then(col => {
+          col.forEach(doc => {
+            console.log('DATA', doc.data())
+          })
+        })
+      </script>
+</body>
+</html>
